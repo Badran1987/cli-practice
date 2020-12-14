@@ -15,6 +15,14 @@
 
 // We will store each piece of information in a dedicated variable for later use.
 
+var amount = process.argv[2];
+var mainCurrncy = process.argv[3];
+var targitCurrancy = process.argv[4];
+
+console.log('Your amount is = ', amount);
+console.log('Your amount is = ', mainCurrncy);
+console.log('Your amount is = ', targitCurrancy);
+
 
 
 // --------------------------------------------------
