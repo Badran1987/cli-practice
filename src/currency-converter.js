@@ -19,9 +19,6 @@ var amount = process.argv[2];
 var mainCurrncy = process.argv[3];
 var targitCurrancy = process.argv[4];
 
-console.log('Your amount is = ', amount);
-console.log('Your amount is = ', mainCurrncy);
-console.log('Your amount is = ', targitCurrancy);
 
 
 
@@ -65,9 +62,6 @@ var rates = {
         USD: 1.27528,
        },
     };
-console.log(rates)
-console.log(rates[mainCurrncy])
-console.log(rates[mainCurrncy][targitCurrancy])
 
 // --------------------------------------------------
 // Step 4: Ensure that a conversion rate exists
@@ -94,9 +88,7 @@ if (rates[mainCurrncy] === undefined || rates[mainCurrncy][targitCurrancy] === u
 // Now we will compute the rate, apply it to the amount, and capture the result.
 
 var rate = rates[mainCurrncy][targitCurrancy];
-console.log('The rate is :',rate )
 var result = rate * amount
-console.log('the result is :',result )
 
 // --------------------------------------------------
 // Step 6: Display results
