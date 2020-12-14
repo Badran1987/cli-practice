@@ -79,7 +79,12 @@ console.log(rates[mainCurrncy][targitCurrancy])
 // warning message and exit the program.
 
 
+if (rates[mainCurrncy] === undefined || rates[mainCurrncy][targitCurrancy] === undefined){
 
+    console.log('You have enterd Undefined Valeu for Main and Target Carrency');
+    process.exit();
+    
+    }
 // --------------------------------------------------
 // Step 5: Perform conversion
 // --------------------------------------------------
