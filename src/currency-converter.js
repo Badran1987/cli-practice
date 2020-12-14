@@ -93,7 +93,10 @@ if (rates[mainCurrncy] === undefined || rates[mainCurrncy][targitCurrancy] === u
 
 // Now we will compute the rate, apply it to the amount, and capture the result.
 
-
+var rate = rates[mainCurrncy][targitCurrancy];
+console.log('The rate is :',rate )
+var result = rate * amount
+console.log('the result is :',result )
 
 // --------------------------------------------------
 // Step 6: Display results
@@ -102,3 +105,6 @@ if (rates[mainCurrncy] === undefined || rates[mainCurrncy][targitCurrancy] === u
 
 // This message should also include the original amount and currency information
 // supplied by the user.
+
+
+console.log('Sucsessfully convert', amount, mainCurrncy, 'into',result, targitCurrancy);
