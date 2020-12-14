@@ -33,7 +33,10 @@ console.log('Your amount is = ', targitCurrancy);
 // If any of the required information is missing, display a meaningful message
 // and exit the program.
 
-
+if (amount === undefined || mainCurrncy === undefined || targitCurrancy === undefined ) {
+    console.log('You enter the Amount, Main Currency or Targit Currency Undefined');
+    process.exit();
+}
 
 // --------------------------------------------------
 // Step 3: Define currency conversion rates
