@@ -50,7 +50,24 @@ if (amount === undefined || mainCurrncy === undefined || targitCurrancy === unde
 // The conversion rates do not have to be accurate, athough this resource contains
 // up-to-date rate information: https://www.xe.com/
 
+var rates = {
 
+    CAD: {
+     USD:0.784142,
+     JOD:0.554142,
+    },
+    USD: {
+     CAD: 1.27528,
+     JOD: 1.22,
+    },
+    JOD: {
+        CAD: 1.27528,
+        USD: 1.27528,
+       },
+    };
+console.log(rates)
+console.log(rates[mainCurrncy])
+console.log(rates[mainCurrncy][targitCurrancy])
 
 // --------------------------------------------------
 // Step 4: Ensure that a conversion rate exists
