@@ -8,6 +8,7 @@
 // differently. There are many paths and approaches that result in a perfectly
 // valid finished product.
 
+var {validateUserInput} = require('./validate-user-input');
 // --------------------------------------------------
 // Step 1: Capture user input
 // --------------------------------------------------
@@ -30,10 +31,8 @@ var targitCurrancy = process.argv[4];
 // If any of the required information is missing, display a meaningful message
 // and exit the program.
 
-if (amount === undefined || mainCurrncy === undefined || targitCurrancy === undefined ) {
-    console.log('You enter the Amount, Main Currency or Targit Currency Undefined');
-    process.exit();
-}
+validateUserInput(amount,mainCurrncy,targitCurrancy);
+
 
 // --------------------------------------------------
 // Step 3: Define currency conversion rates
