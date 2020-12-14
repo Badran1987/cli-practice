@@ -9,6 +9,8 @@
 // valid finished product.
 
 var {validateUserInput} = require('./validate-user-input');
+var {conversionRateExists} = require('./conversion-rate-exists');
+var {calcolatConversion} = require('./CalculateConversion');
 // --------------------------------------------------
 // Step 1: Capture user input
 // --------------------------------------------------
@@ -20,9 +22,6 @@ var amount = process.argv[2];
 var mainCurrncy = process.argv[3];
 var targitCurrancy = process.argv[4];
 
-
-
-
 // --------------------------------------------------
 // Step 2: Validate user input
 // --------------------------------------------------
@@ -32,7 +31,6 @@ var targitCurrancy = process.argv[4];
 // and exit the program.
 
 validateUserInput(amount,mainCurrncy,targitCurrancy);
-
 
 // --------------------------------------------------
 // Step 3: Define currency conversion rates
@@ -71,13 +69,8 @@ var rates = {
 // If the user supplies an invalid initial or target currency, display a meaningful
 // warning message and exit the program.
 
+conversionRateExists(rates, mainCurrncy,targitCurrancy);
 
-if (rates[mainCurrncy] === undefined || rates[mainCurrncy][targitCurrancy] === undefined){
-
-    console.log('You have enterd Undefined Valeu for Main and Target Carrency');
-    process.exit();
-    
-    }
 // --------------------------------------------------
 // Step 5: Perform conversion
 // --------------------------------------------------
@@ -86,7 +79,7 @@ if (rates[mainCurrncy] === undefined || rates[mainCurrncy][targitCurrancy] === u
 
 // Now we will compute the rate, apply it to the amount, and capture the result.
 
-var rate = rates[mainCurrncy][targitCurrancy];
+calcolatConversion(rates,mainCurrncy,targitCurrancy)
 var result = rate * amount
 
 // --------------------------------------------------
