@@ -10,14 +10,18 @@
 // file. In this case we've defined the function and the corresponding test in the
 // same file for illustrative and learning purposes.
 
-function myCoolFunction() {
-  return 'Wow, what a cool function';
-}
+//validateUserInput function Test
+var { validateUserInput } = require('../src/validate-user-input');
 
-describe('myCoolFunction()', () => {
-  test('should return the message: "Wow, what a cool function"', () => {
-    const result = myCoolFunction();
+describe('validateUserInput', function() {
 
-    expect(result).toBe('Wow, what a cool function');
+  test('should Validate User input is correct and not undefined ', function() {
+
+    var result = validateUserInput();
+
+    expect(result).toBe('You enter the Amount, Main Currency or Targit Currency Undefined');
   });
+
+  
 });
+
